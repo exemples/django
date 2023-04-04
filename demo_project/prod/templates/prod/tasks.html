@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+{% include 'prod/prod_nav.html' %} 
+{% endblock nav %}
+{% block content %}
+    Tasks List
+    
+    <ul>
+    {% for task in tasks %}
+        <li>{{task.task_title}}</li>
+    {% endfor %}
+    </ul>
+        
+{% endblock content %}    

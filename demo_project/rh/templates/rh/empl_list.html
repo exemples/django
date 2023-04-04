@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+{% include 'rh/rh_nav.html' %} 
+{% endblock nav %}
+{% block content %}
+    <h2>Employees List</h2>
+    <ul>
+        {% for employee in employees %}
+            <li><a href="{% url 'rh-empl-detail' employee.id %}">{{employee.fname}}</a>
+                , {{employee.lname}} => {{employee.salary}}
+            </li>
+            
+            {% endfor %}
+    </ul>
+
+    <hr>
+
+    <b>Number of employees : </b> {{employee_count}}
+    <br/>
+    <b>Average Salary : </b> {{average_salary.salary__avg}}
+
+{% endblock content %} 
